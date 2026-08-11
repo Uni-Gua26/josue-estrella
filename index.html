@@ -1,5 +1,101 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Josué Estrella</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5f8;
+    text-align: center;
+    padding: 20px;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* MENÚ */
+.menu {
+    max-width: 420px;
+    margin: 0 auto 20px auto;
+    text-align: left;
+}
+
+.menu select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+/* TARJETA */
+.tarjeta {
+    max-width: 420px;
+    margin: auto;
+    background: white;
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #374151;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 17px;
+    margin: 12px 0;
+}
+
+/* AL IMPRIMIR, OCULTAR EL MENÚ */
+@media print {
+    .menu {
+        display: none;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .tarjeta {
+        box-shadow: none;
+    }
+}
+</style>
+
+</head>
+
 <body>
 
+<!-- MENÚ DESPLEGABLE -->
+<div class="menu">
+    <select onchange="irAlMenu(this.value)">
+        <option value="">☰ Menú</option>
+        <option value="inicio">Página principal</option>
+        <option value="imprimir">Imprimir</option>
+    </select>
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
 <div class="tarjeta">
 
 <img src="image.png" alt="Universidad de Guanajuato" class="logo">
@@ -16,5 +112,20 @@ Licenciatura en Inglés</p>
 
 </div>
 
+<script>
+function irAlMenu(opcion) {
+
+    if (opcion === "inicio") {
+        window.location.href = "https://www.ugto.mx";
+    }
+
+    if (opcion === "imprimir") {
+        window.print();
+    }
+
+}
+</script>
+
 </body>
 </html>
+```
